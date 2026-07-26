@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620">
+  <rect width="900" height="620" rx="42" fill="#eee8dd"/>
+  <rect x="90" y="65" width="720" height="310" rx="18" fill="#274a40"/>
+  <rect x="110" y="85" width="680" height="270" rx="8" fill="#31584d"/>
+  <text x="450" y="185" text-anchor="middle" fill="#f7f2e8" font-size="44" font-family="serif">学ぶことは、</text>
+  <text x="450" y="250" text-anchor="middle" fill="#f7f2e8" font-size="48" font-family="serif">自分の可能性を増やすこと。</text>
+  <path d="M245 295h410" stroke="#efe4cc" stroke-width="5" opacity=".65"/>
+  <g fill="#a87953">
+    <rect x="130" y="445" width="230" height="24" rx="8"/>
+    <rect x="540" y="445" width="230" height="24" rx="8"/>
+    <rect x="230" y="540" width="230" height="24" rx="8"/>
+  </g>
+  <g fill="#72503a">
+    <rect x="155" y="468" width="18" height="105"/>
+    <rect x="315" y="468" width="18" height="105"/>
+    <rect x="565" y="468" width="18" height="105"/>
+    <rect x="725" y="468" width="18" height="105"/>
+    <rect x="255" y="563" width="18" height="40"/>
+    <rect x="415" y="563" width="18" height="40"/>
+  </g>
+</svg>

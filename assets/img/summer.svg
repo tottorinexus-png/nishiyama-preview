@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+  <rect width="900" height="650" rx="44" fill="#f6efdc"/>
+  <circle cx="720" cy="145" r="88" fill="#d6ad5c"/>
+  <g stroke="#d6ad5c" stroke-width="10" stroke-linecap="round">
+    <path d="M720 25v45M720 220v45M600 145h45M795 145h45M635 60l32 32M773 198l32 32M805 60l-32 32M667 198l-32 32"/>
+  </g>
+  <g filter="url(#s)">
+    <rect x="135" y="130" width="500" height="385" rx="22" fill="#fffdf7"/>
+    <path d="M205 130v385" stroke="#ddcdb9" stroke-width="4"/>
+    <path d="M240 225h320M240 295h260M240 365h310" stroke="#8ca69b" stroke-width="12" stroke-linecap="round" opacity=".55"/>
+    <text x="400" y="455" text-anchor="middle" fill="#173f35" font-size="44" font-family="serif" font-weight="700">夏を、伸びる時間に。</text>
+  </g>
+  <g fill="#173f35">
+    <path d="M75 565c65-125 125-102 174 0z" opacity=".9"/>
+    <path d="M650 575c50-145 116-110 166 0z" opacity=".8"/>
+  </g>
+  <defs><filter id="s"><feDropShadow dy="18" stdDeviation="18" flood-opacity=".16"/></filter></defs>
+</svg>
