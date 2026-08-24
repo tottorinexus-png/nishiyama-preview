@@ -83,4 +83,100 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // ---------------------------------------------------------
+  // トップページ：時期に合わせて季節講習を自動表示
+  //
+  // 表示期間（毎年共通）
+  // 春期：2/1〜4/15
+  // 夏期：5/15〜8/31
+  // 冬期：10/15〜1/15
+  //
+  // 「募集中」とは自動表示せず、講習そのものを案内する仕様。
+  // 実際の募集期間が変わっても誤案内になりにくい設計です。
+  // ---------------------------------------------------------
+  const seasonalFocus = document.querySelector("[data-seasonal-focus]");
+
+  if (seasonalFocus) {
+    const now = new Date();
+    const monthDay = (now.getMonth() + 1) * 100 + now.getDate();
+
+    const seasonalContent = {
+      spring: {
+        className: "is-spring",
+        kicker: "SPRING COURSE",
+        badge: "春のご案内",
+        title: "春期講習",
+        message: "これまでの復習と、新学年へ向けた準備を。",
+        sub: "苦手な分野を見つけて整理し、新しい学年を気持ちよく始められるよう、一人ひとりの学習を支えます。",
+        href: "seasonal.html#spring-course",
+        button: "春期講習を見る"
+      },
+      summer: {
+        className: "is-summer",
+        kicker: "SUMMER COURSE",
+        badge: "夏のご案内",
+        title: "夏期講習",
+        message: "長い夏休みを、できることが増える時間に。",
+        sub: "これまでの学習を振り返り、苦手教科や苦手単元にじっくり向き合います。受験学年は高校入試を見据えた準備にも取り組みます。",
+        href: "seasonal.html#summer-course",
+        button: "夏期講習を見る"
+      },
+      winter: {
+        className: "is-winter",
+        kicker: "WINTER COURSE",
+        badge: "冬のご案内",
+        title: "冬期講習",
+        message: "短い冬休みだからこそ、学ぶ内容を絞って丁寧に。",
+        sub: "復習や受験対策を通して、次に何を勉強すればよいかを整理し、学習のコツをつかむ期間にします。",
+        href: "seasonal.html#winter-course",
+        button: "冬期講習を見る"
+      },
+      default: {
+        className: "is-default",
+        kicker: "SEASONAL COURSE",
+        badge: "季節講習",
+        title: "春期・夏期・冬期講習",
+        message: "長期休暇だからこそできる学習を、一人ひとりに。",
+        sub: "これまでの復習、苦手克服、新学年の準備、受験対策など、その時期と目標に合わせて取り組みます。",
+        href: "seasonal.html",
+        button: "季節講習を見る"
+      }
+    };
+
+    let season = "default";
+
+    if (monthDay >= 101 && monthDay <= 115) {
+      season = "winter";
+    } else if (monthDay >= 201 && monthDay <= 415) {
+      season = "spring";
+    } else if (monthDay >= 515 && monthDay <= 831) {
+      season = "summer";
+    } else if (monthDay >= 1015 && monthDay <= 1231) {
+      season = "winter";
+    }
+
+    const content = seasonalContent[season];
+
+    seasonalFocus.classList.remove("is-spring", "is-summer", "is-winter", "is-default");
+    seasonalFocus.classList.add(content.className);
+
+    const kicker = seasonalFocus.querySelector("[data-seasonal-kicker]");
+    const badge = seasonalFocus.querySelector("[data-seasonal-badge]");
+    const title = seasonalFocus.querySelector("[data-seasonal-title]");
+    const message = seasonalFocus.querySelector("[data-seasonal-message]");
+    const sub = seasonalFocus.querySelector("[data-seasonal-sub]");
+    const link = seasonalFocus.querySelector("[data-seasonal-link]");
+
+    if (kicker) kicker.textContent = content.kicker;
+    if (badge) badge.textContent = content.badge;
+    if (title) title.textContent = content.title;
+    if (message) message.textContent = content.message;
+    if (sub) sub.textContent = content.sub;
+    if (link) {
+      link.href = content.href;
+      link.textContent = content.button;
+    }
+  }
+
 });
